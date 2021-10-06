@@ -59,18 +59,22 @@ hooks.add("install_plugins", function(use)
      "folke/twilight.nvim",
      cmd = {"Twilight", "TwilightEnable", "TwilightDisable"}
    }
-   use {
-     "williamboman/nvim-lsp-installer",
-     config = function()
-       local lsp_installer = require "nvim-lsp-installer"
+   -- use {
+   --         "simrat39/rust-tools.nvim"
+   -- }
+   use {"jvgrootveld/telescope-zoxide"}
 
-         lsp_installer.on_server_ready(function(server)
-           local opts = {}
-            server:setup(opts)
-            vim.cmd [[ do User LspAttachBuffers ]]
-          end)
-        end,
-      }
+   -- use {
+   --   "williamboman/nvim-lsp-installer",
+   --    config = function()
+   --            local lsp_installer = require "nvim-lsp-installer"
+   --       lsp_installer.on_server_ready(function(server)
+   --               local opts = {}
+   --          server:setup(opts)
+   --          vim.cmd [[ do User LspAttachBuffers ]]
+   --  end)
+   --  end,
+   --    }
 end)
 
 hooks.add("setup_mappings", function(map)
@@ -84,6 +88,7 @@ hooks.add("setup_mappings", function(map)
     map("n", "<leader>gl", ":Telescope git_commits<CR>")
     map("n", "<leader>gbc", ":Telescope git_branches<CR>")
     map("n", "<leader>gu", ":Telescope git_status<CR>")
+    map("n", "<leader>zi", ":Telescope zoxide list<CR>")
 end)
 
 -- alternatively, put this in a sub-folder like "lua/custom/plugins/mkdir"

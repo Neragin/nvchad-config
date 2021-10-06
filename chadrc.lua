@@ -41,7 +41,8 @@ M.plugins = {
         
       },
        lspconfig = {
-         servers = {"html", "cssls", "tsserver", "pyright", "sqlls", "rust_analyzer"}
+         servers = {"html", "cssls", "tsserver", "pyright", "sqlls", "rust_analyzer", "prismals", "jsonls", "bashls", "yamlls", "dotls"},
+         setup_lspconf = "custom.plugins.lspconfig",
       --    servers = {},
       },
       statusline = {
