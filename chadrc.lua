@@ -17,7 +17,7 @@ M.options = {
    clipboard = "unnamedplus",
    mouse = "a",
    expandtab = true,
-   shiftwidth = 8,
+   shiftwidth = 2,
    smartindent = true,
    tabstop = 8, -- Number of spaces that a <Tab> in the file counts for
    timeoutlen = 400,
@@ -28,7 +28,7 @@ M.options = {
 }
 
 M.ui = {
-  theme = "tokyonight",
+  theme = "onedark-deep",
   italic_comments = true,
 
 }

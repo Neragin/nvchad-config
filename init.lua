@@ -1,6 +1,9 @@
 -- This is where you custom modules and plugins goes.
 -- See the wiki for a guide on how to extend NvChad
 
+-- Stop sourcing filetype.vim
+vim.g.did_load_filetypes = 1
+
 local hooks = require "core.hooks"
 
 -- NOTE: To use this, make a copy with `cp example_init.lua init.lua`
@@ -36,6 +39,7 @@ hooks.add("install_plugins", function(use)
       "ActivityWatch/aw-watcher-vim",
       event = "VimEnter",
    }
+  use { "nathom/filetype.nvim" }
   use {
       "tpope/vim-fugitive",
       cmd = {
@@ -63,6 +67,10 @@ hooks.add("install_plugins", function(use)
    --         "simrat39/rust-tools.nvim"
    -- }
    use {"jvgrootveld/telescope-zoxide"}
+   use {
+           "plasticboy/vim-markdown",
+           ft = {"markdown"}
+   }
 
    -- use {
    --   "williamboman/nvim-lsp-installer",
