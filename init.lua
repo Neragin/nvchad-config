@@ -4,6 +4,9 @@
 -- Stop sourcing filetype.vim
 vim.g.did_load_filetypes = 1
 
+-- vim.api.nvim_eval("let g:copilot_no_tab_map = v:true")
+-- vim.api.nvim_eval("let g:copilot_assume_mapped = v:true")
+
 local hooks = require "core.hooks"
 
 -- NOTE: To use this, make a copy with `cp example_init.lua init.lua`
@@ -40,6 +43,7 @@ hooks.add("install_plugins", function(use)
       event = "VimEnter",
    }
   use { "nathom/filetype.nvim" }
+  -- use { "github/copilot.vim" }
   use {
       "tpope/vim-fugitive",
       cmd = {
@@ -71,6 +75,9 @@ hooks.add("install_plugins", function(use)
            "plasticboy/vim-markdown",
            ft = {"markdown"}
    }
+   use {"pwntester/octo.nvim", config=function()
+     require"octo".setup()
+   end}
 
    -- use {
    --   "williamboman/nvim-lsp-installer",

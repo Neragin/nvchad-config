@@ -5,7 +5,7 @@ M.setup_lsp = function(attach, capabilities)
 
    -- lspservers with default config
 
-   local servers = {"html", "cssls", "tsserver", "pyright", "sqlls", "rust_analyzer", "prismals", "jsonls", "bashls", "yamlls", "dotls"}
+   local servers = {"html", "cssls", "tsserver", "pyright", "sqlls", "rust_analyzer", "prismals", "jsonls", "bashls", "yamlls", "dotls", "intelephense"}
 
    for _, lsp in ipairs(servers) do
       lspconfig[lsp].setup {
@@ -25,7 +25,7 @@ M.setup_lsp = function(attach, capabilities)
   --   filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
   --   init_options = {hostInfo = "neovim"},
   --   root_dir = root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git")
-  --   }
+    -- }
 end
 
 return M
